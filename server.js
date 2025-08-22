@@ -1,4 +1,4 @@
-import express from "express"
+import express, { json } from "express"
 import personagens from "./src/data/personagens.js";
 
 
@@ -65,8 +65,12 @@ app.get("/personagens/raca/:raca", (req,res) => {
 
 app.get("/personagens/vivos/sim", (req,res) => {
     const personagensVivos = personagens.filter(p => p.vivo === true)
+
     if(personagensVivos){
         res.status(200).json(personagensVivos)
+    } else {
+        res.status(404),json
+        mensagem:"nao esta vivo"
     }
 })
 
