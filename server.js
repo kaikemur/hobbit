@@ -7,7 +7,7 @@ app.use(express.json());
 
 const serverPort = 3003;
 
-app.get("",(req,res) => {
+app.get("/",(req,res) => {
     res.send("bem vindo ao servidor de hobbit")
 })
 
@@ -46,6 +46,7 @@ app.get("/personagens/nome/:nome", (req,res) => {
         })
     }
 })
+
 app.get("/personagens/raca/:raca", (req,res) => {
     let raca = req.params.raca
     raca = toLowerCase()
@@ -72,5 +73,5 @@ app.get("/personagens/vivos/sim", (req,res) => {
 
 
 app.listen(serverPort, () => {
-    
+    console.log("Servidor esta em pe")
 });
