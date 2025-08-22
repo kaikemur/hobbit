@@ -49,7 +49,7 @@ app.get("/personagens/nome/:nome", (req,res) => {
 
 app.get("/personagens/raca/:raca", (req,res) => {
     let raca = req.params.raca
-    raca = toLowerCase()
+    raca = raca.toLowerCase()
 
     const racasFiltrados = personagens.filter(p => p.raca.toLowerCase().includes(raca))
 
